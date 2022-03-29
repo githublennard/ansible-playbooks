@@ -1,0 +1,12 @@
+---
+- hosts: imagen 
+
+  remote_user: administrator
+  become: yes
+  become_method: sudo
+
+  tasks:
+
+  - name: Instalando Paquetes 
+    pacman: name=net-tools state=installed
+    pacman: name=python2-setuptools state=installed

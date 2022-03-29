@@ -1,0 +1,98 @@
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+# Ex 1: Ungrouped hosts, specify before any group headers.
+
+## green.example.com
+## blue.example.com
+## 192.168.100.1
+## 192.168.100.10
+
+# Ex 2: A collection of hosts belonging to the 'webservers' group
+
+## [webservers]
+## alpha.example.org
+## beta.example.org
+## 192.168.1.100
+## 192.168.1.110
+
+# If you have multiple hosts following a pattern you can specify
+# them like this:
+
+## www[001:006].example.com
+
+# Ex 3: A collection of database servers in the 'dbservers' group
+
+## [dbservers]
+## 
+## db01.intranet.mydomain.net
+## db02.intranet.mydomain.net
+## 10.25.1.56
+## 10.25.1.57
+
+# Here's another example of host ranges, this time there are no
+# leading 0s:
+
+## db-[99:101]-node.example.com
+[imagen]
+ic-13
+ic-08
+
+[imagen:vars]
+ansible_user=administrator
+ansible_python_interpreter="/usr/bin/python2"
+
+[workstations]
+#ic-01
+ic-02
+ic-03
+ic-04
+ic-05
+ic-06
+ic-07
+ic-08
+ic-09
+ic-10
+ic-11
+ic-12
+ic-13
+ic-14
+ic-15
+#ic-16
+
+[workstations:vars]
+ansible_user=administrator
+ansible_python_interpreter="/usr/bin/python2"
+
+[ccshosting]
+#caracasserver.com
+caracashosting10.com
+caracashosting15.com
+caracashosting20.com
+caracashosting25.com
+caracashosting30.com
+caracashosting35.com
+caracashosting40.com
+#caracashosting45.com
+caracashosting50.com
+caracashosting55.com
+
+[ccshosting:vars]
+ansible_port=2134
+ansible_user=root
+
+[pasantes]
+ic-05
+ic-06
+ic-07
+
+[pasantes:vars]
+ansible_user=administrator
+ansible_python_interpreter="/usr/bin/python2"
